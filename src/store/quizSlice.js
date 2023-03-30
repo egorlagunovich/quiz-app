@@ -7,6 +7,7 @@ const initialState = {
   showScore: false,
   currentAnswer: "",
   showMessage: false,
+  isLoading: false,
 };
 
 const quizSlice = createSlice({
@@ -26,6 +27,8 @@ const quizSlice = createSlice({
       state.currentQuestion = 0;
       state.isCorrect = false;
       state.showScore = false;
+      state.currentAnswer = "";
+      state.showMessage = false;
     },
     setShowScore(state) {
       state.showScore = true;
@@ -34,8 +37,11 @@ const quizSlice = createSlice({
       state.currentAnswer = action.payload;
     },
     setShowMessage(state, action) {
-      state.showMessage = action.payload
-    }
+      state.showMessage = action.payload;
+    },
+    setIsLoading(state, action) {
+      state.isLoading = action.payload;
+    },
   },
 });
 

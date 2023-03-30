@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { quizActions } from "../../store/quizSlice";
 import styles from "./QuizGame.module.css";
@@ -47,6 +47,9 @@ export default function QuizGame(props) {
       <button onClick={resetHandler}>Play again</button>
     </div>
   );
+  useEffect(() => {
+    dispatch(quizActions.clearQuiz());
+  }, []);
   return (
     <>
       {!showScore ? (

@@ -1,3 +1,4 @@
+import { useDispatch, useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AboutPage from "./components/AboutPage";
 import HomePage from "./components/HomePage";
@@ -7,8 +8,12 @@ import QuizGeography from "./components/Quiz/QuizGeography";
 import QuizHistory from "./components/Quiz/QuizHistory";
 import QuizPage from "./components/Quiz/QuizPage";
 import QuizScience from "./components/Quiz/QuizScience";
+import { quizActions } from "./store/quizSlice";
 
 function App() {
+  const loadingMessage = <p>Loading...</p>;
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector((state) => state.isLoading);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -22,10 +27,12 @@ function App() {
         },
         {
           path: "quiz/geography",
+
           loader: async () => {
-            return fetch(
+            const data = await fetch(
               "https://the-trivia-api.com/api/questions?categories=geography&limit=10&difficulty=hard"
             );
+            return data;
           },
           element: <QuizGeography />,
         },
@@ -59,7 +66,12 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      {/* {isLoading && loadingMessage} */}
+    </>
+  );
 }
 
 export default App;

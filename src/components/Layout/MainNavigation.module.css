@@ -7,10 +7,27 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 100px;
   -webkit-box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
   box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
+}
+.navbar img {
+  width: 40px;
+  height: 40px;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.login,
+.quizText {
+  color: #1077f1;
+}
+.login:hover {
+  border-bottom: 1px solid #1077f1;
 }
 .navbar ul {
   display: flex;
@@ -22,12 +39,13 @@
 
 .playBut a {
   color: white;
-  background-color: #e77b77;
+  background-color: #1077f1;
   border-radius: 5px;
   padding: 10px 40px;
 }
 .playBut a:hover,
 .playBut a:active,
 .playBut a:focus {
-  background-color: #c75c5c;
+  background-color: #596fdd;
+  transition: 0.1s;
 }
