@@ -1,0 +1,29 @@
+.option {
+  cursor: pointer;
+  border: 1px solid gray;
+}
+.options li {
+  cursor: pointer;
+}
+.options li:hover,
+.options li:focus,
+.options li:active {
+  background-color: rgb(178, 178, 178);
+}
+.gameMenu {
+  margin: 0 auto;
+  width: 700px;
+}
+.options li {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+.activeOption {
+  background-color: gray;
+  color: white;
+  font-size: bold;
+}
+.responseMessage {
+  color: red;
+  text-align: center;
+}

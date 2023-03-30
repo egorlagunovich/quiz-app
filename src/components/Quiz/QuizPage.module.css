@@ -1,0 +1,27 @@
+.quizMenu {
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.imgBlock img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+.quizBlock {
+  text-align: center;
+  border: 1px solid rgb(61, 191, 243);
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  font-size: 20px;
+}
+.quizBlock:hover,
+.quizBlock:active,
+.quizBlock:focus {
+  border: 1px solid blue;
+  font-size: 21px;
+  transform: scale(1.05);
+  transition: 0.1s;
+}

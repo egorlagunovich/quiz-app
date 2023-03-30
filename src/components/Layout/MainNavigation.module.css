@@ -1,0 +1,33 @@
+.navbar {
+  width: 100%;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #33333a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  -webkit-box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
+  box-shadow: 4px 2px 21px 0px rgba(66, 68, 90, 1);
+}
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.playBut a {
+  color: white;
+  background-color: #e77b77;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+.playBut a:hover,
+.playBut a:active,
+.playBut a:focus {
+  background-color: #c75c5c;
+}
