@@ -41,6 +41,54 @@ export default function QuizPage() {
           Science
         </div>
       </Link>
+      <Link to="sport">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="sport" />
+          </div>
+          Sport
+        </div>
+      </Link>
+      <Link to="music">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="music" />
+          </div>
+          Music
+        </div>
+      </Link>
+      <Link to="society">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="society" />
+          </div>
+          Society
+        </div>
+      </Link>
+      <Link to="science">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="science" />
+          </div>
+          Science
+        </div>
+      </Link>
+      <Link to="science">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="science" />
+          </div>
+          Science
+        </div>
+      </Link>
+      <Link to="science">
+        <div className={styles.quizBlock}>
+          <div className={styles.imgBlock}>
+            <img src={scinceIMG} alt="science" />
+          </div>
+          Science
+        </div>
+      </Link>
     </div>
   );
 }

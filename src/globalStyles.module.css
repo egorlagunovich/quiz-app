@@ -16,3 +16,7 @@ ul {
 body {
   background-color: white;
 }
+button {
+  cursor: pointer;
+  border: none;
+}

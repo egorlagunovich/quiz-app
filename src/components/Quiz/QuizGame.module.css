@@ -1,6 +1,13 @@
 .option {
   cursor: pointer;
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+.option:last-child {
+  border-bottom: none;
+}
+.options {
+  border: 1px solid black;
+  border-radius: 5px;
 }
 .options li {
   cursor: pointer;
@@ -8,10 +15,11 @@
 .options li:hover,
 .options li:focus,
 .options li:active {
-  background-color: rgb(178, 178, 178);
+  background-color: #596fdd;
+  color: white;
 }
 .gameMenu {
-  margin: 0 auto;
+  margin: 80px auto;
   width: 700px;
 }
 .options li {
@@ -19,11 +27,61 @@
   font-size: 20px;
 }
 .activeOption {
-  background-color: gray;
+  background-color: #1077f1;
   color: white;
   font-size: bold;
 }
 .responseMessage {
   color: red;
   text-align: center;
+}
+.question {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.questionNumber {
+  font-size: 20px;
+}
+
+.nextBut {
+  font-size: 20px;
+  margin-top: 20px;
+  width: 100%;
+  color: white;
+  background-color: #1077f1;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+.nextBut:hover,
+.nextBut:active,
+.nextBut:focus,
+.playAgainBut:hover,
+.playAgainBut:active,
+.playAgainBut:focus,
+.chooseBut:hover,
+.chooseBut:active,
+.chooseBut:focus {
+  background-color: #596fdd;
+  transition: 0.1s;
+}
+
+.resultBlock {
+  margin: 20px auto;
+  text-align: center;
+}
+.resultBlock p {
+  font-size: 25px;
+}
+.playAgainBut,
+.chooseBut {
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #1077f1;
+  border-radius: 5px;
+  padding: 10px 40px;
+  margin-right: 10px;
+}
+.resText {
+  color: rgb(22, 222, 22);
 }

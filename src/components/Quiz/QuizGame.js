@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { quizActions } from "../../store/quizSlice";
 import styles from "./QuizGame.module.css";
 
 export default function QuizGame(props) {
   const dispatch = useDispatch();
   const data = props.data;
-  const currentQuestionNumber = useSelector((state) => state.currentQuestion);
-  const correctAnswers = useSelector((state) => state.correctAnswers);
-  const currentAnswer = useSelector((state) => state.currentAnswer);
-  const showScore = useSelector((state) => state.showScore);
-  const showMessage = useSelector((state) => state.showMessage);
+  const currentQuestionNumber = useSelector(
+    (state) => state.quiz.currentQuestion
+  );
+  const correctAnswers = useSelector((state) => state.quiz.correctAnswers);
+  const currentAnswer = useSelector((state) => state.quiz.currentAnswer);
+  const showScore = useSelector((state) => state.quiz.showScore);
+  const showMessage = useSelector((state) => state.quiz.showMessage);
   const answers = [
     data[currentQuestionNumber].correctAnswer,
     ...data[currentQuestionNumber].incorrectAnswers,
@@ -42,9 +45,25 @@ export default function QuizGame(props) {
     dispatch(quizActions.clearQuiz());
   };
   const resultMessage = (
-    <div>
-      <p>Your result is {correctAnswers}/10!</p>
-      <button onClick={resetHandler}>Play again</button>
+    <div className={styles.resultBlock}>
+      <p>
+        {correctAnswers === 10
+          ? "You are crazy!"
+          : correctAnswers >= 8 && correctAnswers < 10
+          ? "Well done!"
+          : correctAnswers >= 5 && correctAnswers < 8
+          ? "Good!"
+          : correctAnswers >= 3 && correctAnswers < 5
+          ? "Not bad!"
+          : "Next time will be better!"}
+      </p>
+      <p className={styles.resText}>Your result is {correctAnswers}/10!</p>
+      <button onClick={resetHandler} className={styles.playAgainBut}>
+        Play again
+      </button>
+      <Link to="/quiz">
+        <button className={styles.chooseBut}>Choose another quiz</button>
+      </Link>
     </div>
   );
   useEffect(() => {
@@ -54,7 +73,9 @@ export default function QuizGame(props) {
     <>
       {!showScore ? (
         <div className={styles.gameMenu}>
-          <div>{currentQuestionNumber + 1}/10</div>
+          <div className={styles.questionNumber}>
+            {currentQuestionNumber + 1}/10
+          </div>
           <h2 className={styles.question}>
             {data[currentQuestionNumber].question}
           </h2>
@@ -75,7 +96,9 @@ export default function QuizGame(props) {
             ))}
           </ul>
           <div className={styles.actions}>
-            <button onClick={onNextQuestion}>Next</button>
+            <button onClick={onNextQuestion} className={styles.nextBut}>
+              Next
+            </button>
           </div>
           {showMessage && responseMessage}
         </div>
