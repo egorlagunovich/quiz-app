@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/quiz-app/static/css/main.b791e5ed.css",
+    "main.js": "/quiz-app/static/js/main.8ce6c2c0.js",
+    "static/media/food.jpg": "/quiz-app/static/media/food.0c09a03bc85fe485da20.jpg",
+    "static/media/science.png": "/quiz-app/static/media/science.5b423bfdf8435dff063f.png",
+    "static/media/mix.jpg": "/quiz-app/static/media/mix.a6b05a6f335aab07c6ec.jpg",
+    "static/media/geography.jpg": "/quiz-app/static/media/geography.b48848a74dd6f042df25.jpg",
+    "static/media/art.jpg": "/quiz-app/static/media/art.3f21b44153bfd7975956.jpg",
+    "static/media/history.jpg": "/quiz-app/static/media/history.44cc7db1cc0f5e2743c7.jpg",
+    "static/media/general-knowledge.jpg": "/quiz-app/static/media/general-knowledge.16a48b736657ff0ceb59.jpg",
+    "static/media/society.jpg": "/quiz-app/static/media/society.8349a7a4c1816ba99313.jpg",
+    "static/media/music.jpg": "/quiz-app/static/media/music.2884fac4afa21fa66d28.jpg",
+    "static/media/main.jpg": "/quiz-app/static/media/main.0786379af6db47e9e0eb.jpg",
+    "static/media/sport.jpg": "/quiz-app/static/media/sport.11d0e0220e2235dbaf71.jpg",
+    "static/media/film.jpg": "/quiz-app/static/media/film.eef5c3bc3ea9d012bc7b.jpg",
+    "static/media/brain.png": "/quiz-app/static/media/brain.9cf05298a62217abdaf0.png",
+    "index.html": "/quiz-app/index.html",
+    "main.b791e5ed.css.map": "/quiz-app/static/css/main.b791e5ed.css.map",
+    "main.8ce6c2c0.js.map": "/quiz-app/static/js/main.8ce6c2c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b791e5ed.css",
+    "static/js/main.8ce6c2c0.js"
+  ]
+}
