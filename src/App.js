@@ -1,4 +1,5 @@
 // import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import MainRouter from "./components/Layout/MainRouter";
@@ -8,6 +9,8 @@ import QuizFood from "./components/Quiz/QuizFood";
 import QuizGeneral from "./components/Quiz/QuizGeneral";
 import QuizGeography from "./components/Quiz/QuizGeography";
 import QuizHistory from "./components/Quiz/QuizHistory";
+import QuizMixedHard from "./components/Quiz/QuizMixedHard";
+import QuizMixedMedium from "./components/Quiz/QuizMixedMedium";
 import QuizMusic from "./components/Quiz/QuizMusic";
 import QuizPage from "./components/Quiz/QuizPage";
 import QuizScience from "./components/Quiz/QuizScience";
@@ -16,9 +19,8 @@ import QuizSport from "./components/Quiz/QuizSport";
 import { quizActions } from "./store/quizSlice";
 
 function App() {
+  // const [isLoading, setIsLoading] = useState(false);
   const loadingMessage = <p>Loading...</p>;
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector((state) => state.isLoading);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -33,9 +35,11 @@ function App() {
           path: "quiz/geography",
 
           loader: async () => {
+            // setIsLoading(true);
             const data = await fetch(
               "https://the-trivia-api.com/api/questions?categories=geography&limit=10&difficulty=hard"
             );
+            // setIsLoading(false);
             return data;
           },
           element: <QuizGeography />,
@@ -121,14 +125,32 @@ function App() {
           },
           element: <QuizArt />,
         },
+        {
+          path: "quiz/mixed/hard",
+          loader: async () => {
+            return fetch(
+              "https://the-trivia-api.com/api/questions?categories=arts_and_literature,film_and_tv,food_and_drink,general_knowledge,geography,history,science,society_and_culture,sport_and_leisure,music&limit=10&difficulty=hard"
+            );
+          },
+          element: <QuizMixedHard />,
+        },
+        {
+          path: "quiz/mixed/medium",
+          loader: async () => {
+            return fetch(
+              "https://the-trivia-api.com/api/questions?categories=arts_and_literature,film_and_tv,food_and_drink,general_knowledge,geography,history,science,society_and_culture,sport_and_leisure,music&limit=10&difficulty=medium"
+            );
+          },
+          element: <QuizMixedMedium />,
+        },
       ],
     },
   ]);
 
   return (
     <>
+      {/* {isLoading && loadingMessage}. */}
       <RouterProvider router={router} />
-      {/* {isLoading && loadingMessage} */}
     </>
   );
 }

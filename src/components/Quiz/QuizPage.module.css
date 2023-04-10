@@ -1,5 +1,6 @@
 .quizMenu {
   margin: 0 auto;
+  text-align: center;
   padding: 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -11,16 +12,17 @@
 }
 .quizBlock {
   text-align: center;
-  border: 1px solid rgb(61, 191, 243);
+  border: 1px solid #1077f1;
   border-radius: 10px;
   width: 300px;
   padding: 20px;
   font-size: 20px;
+  margin: 20px;
 }
 .quizBlock:hover,
 .quizBlock:active,
 .quizBlock:focus {
-  border: 1px solid blue;
+  border: 1px solid #596fdd;
   font-size: 21px;
   transform: scale(1.05);
   transition: 0.1s;
