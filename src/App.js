@@ -1,5 +1,3 @@
-// import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import MainRouter from "./components/Layout/MainRouter";
@@ -16,11 +14,8 @@ import QuizPage from "./components/Quiz/QuizPage";
 import QuizScience from "./components/Quiz/QuizScience";
 import QuizSociety from "./components/Quiz/QuizSociety";
 import QuizSport from "./components/Quiz/QuizSport";
-import { quizActions } from "./store/quizSlice";
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(false);
-  const loadingMessage = <p>Loading...</p>;
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,11 +30,9 @@ function App() {
           path: "quiz/geography",
 
           loader: async () => {
-            // setIsLoading(true);
             const data = await fetch(
               "https://the-trivia-api.com/api/questions?categories=geography&limit=10&difficulty=hard"
             );
-            // setIsLoading(false);
             return data;
           },
           element: <QuizGeography />,
@@ -149,7 +142,6 @@ function App() {
 
   return (
     <>
-      {/* {isLoading && loadingMessage}. */}
       <RouterProvider router={router} />
     </>
   );
