@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Header.module.css";
+import styles from "./Footer.module.css";
 
-export default function Header() {
+export default function Footer() {
   return (
-    <div className={styles.header}>
+    <div className={styles.footer}>
       <a href="https://github.com/egorlagunovich" target="_blank">
         @egorlagunovich
       </a>

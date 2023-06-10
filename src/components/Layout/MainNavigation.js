@@ -6,7 +6,7 @@ import brainIMG from "./../../images/brain.png";
 export default function MainNavigation() {
   return (
     <nav className={styles.navbar}>
-      <Link to="/">
+      <Link to="/quiz-app">
         <div className={styles.logo}>
           <img src={brainIMG} alt="brain" />
           <h1>
@@ -17,7 +17,7 @@ export default function MainNavigation() {
       <div className={styles.menu}>
         <ul>
           <li className={styles.playBut}>
-            <NavLink to="/quiz">Play</NavLink>
+            <NavLink to="/quiz-app/quiz">Play</NavLink>
           </li>
         </ul>
       </div>

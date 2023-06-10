@@ -1,17 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import MainNavigation from "./MainNavigation";
-import Header from "./Header";
+import styles from './MainRouter.module.css'
 
 export default function MainRouter() {
   return (
-    <div>
+    <div className={styles.container}>
       <MainNavigation />
       <main>
         {" "}
         <Outlet />
       </main>
-      <Header />
     </div>
   );
 }
